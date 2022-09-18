@@ -1,9 +1,10 @@
 import { InjectionKey } from 'vue'
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import { products } from './modules/products'
 
 // define typings for the store state
-interface State {
-  count: number
+export interface State {
+  count: number,
 }
 
 // define injection key
@@ -20,6 +21,7 @@ export const store = createStore<State>({
   actions: {
   },
   modules: {
+    products
   }
 })
 
