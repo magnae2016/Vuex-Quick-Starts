@@ -11,6 +11,7 @@ export default defineComponent({
     const store = useStore();
     console.log(store.state.count);
     console.log(store.state.products.all);
+    store.commit('products/increment')
     return {};
   },
 });

@@ -16,6 +16,7 @@ const state:State = {
 }
 
 export const products:Module<State, RootState> = {
+  namespaced: true,
   state,
   getters,
   mutations,

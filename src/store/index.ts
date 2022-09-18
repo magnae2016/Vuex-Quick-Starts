@@ -18,6 +18,9 @@ export const store = createStore<State>({
   getters: {
   },
   mutations: {
+    increment(state) {
+      state.count++
+    }
   },
   actions: {
   },
