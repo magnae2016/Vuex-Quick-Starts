@@ -1,5 +1,5 @@
 import { InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
+import { createStore, Store, useStore as baseUseStore } from 'vuex'
 
 // define typings for the store state
 interface State {
@@ -7,7 +7,7 @@ interface State {
 }
 
 // define injection key
-export const key:InjectionKey<Store<State>> = Symbol()
+export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
   state: {
@@ -22,3 +22,8 @@ export const store = createStore<State>({
   modules: {
   }
 })
+
+// define your own `useStore` composition function
+export function useStore() {
+  return baseUseStore(key);
+}
