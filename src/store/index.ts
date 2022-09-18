@@ -7,7 +7,7 @@ interface State {
 }
 
 // define injection key
-const key:InjectionKey<Store<State>> = Symbol()
+export const key:InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
   state: {
