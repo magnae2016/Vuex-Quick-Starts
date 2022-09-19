@@ -1,19 +1,22 @@
 import { Module } from "vuex";
+import { Product } from "../../../types/products";
 import { State as RootState } from "../../index";
-import actions from "./actions";
+import * as actions from "./actions";
 import getters from "./getters";
 import mutations from "./mutations";
 
 export interface State {
-  all: number[],
-  count: number
+  all: number[];
+  count: number;
+  allProducts: Product[]
 }
 
 // initial state
-const state:State = {
+const state: State = {
   all: [1, 2, 3],
-    count: 0
-}
+  count: 0,
+  allProducts: []
+};
 
 export const products:Module<State, RootState> = {
   namespaced: true,
